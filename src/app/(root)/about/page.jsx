@@ -1,6 +1,7 @@
 const page = () => {
+  throw new Error('Not yet implemented');
   return (
-    <div>
+    <div>   
         <h1>About</h1>
     </div>
 )
