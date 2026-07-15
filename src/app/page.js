@@ -1,4 +1,3 @@
-import React from 'react'
 import Hello from '../components/hello'
 const Home = () => {
   console.log('What type of component is this?');
