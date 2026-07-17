@@ -19,10 +19,13 @@ const Navbar = () => {
                     <Link href='/' >Home</Link>
                     <Link href='/' >Plans</Link>
                     <Link href='/bmi/calculator' >Calculator</Link>
-                    {user ? <></> :
+                    {user ? <>
+                        <div>
+                            <Link href={"/user/profile"}>Profile</Link>
+                        </div>
+                    </> :
                         <div>
                             <Link href='/' >Create Plan</Link>
-
                         </div>
                     }
                 </ul>

@@ -7,7 +7,7 @@ import { useAuth } from '@/context/AuthContext';
 function Auth() {
 
     const router = useRouter();
-    const { user, login } = useAuth();
+    const { user } = useAuth();
 
     const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
@@ -21,7 +21,7 @@ function Auth() {
         window.location.href = `${BACKEND_URL}/api/auth/`;
     }
 
-
+    
   return (
     <div className="min-h-screen flex items-center justify-center">
       <button
