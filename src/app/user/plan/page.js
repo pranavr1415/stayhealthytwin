@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function Plan() {
+export default function Plan({ plan }) {
+    
   return (
     <div>Plan</div>
   )
