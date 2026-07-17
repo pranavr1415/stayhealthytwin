@@ -1,11 +1,188 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  --muted: #a3a3a3;
+  --border: #2e2e2e;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 1.25rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header / Nav */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+header nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Buttons / links */
+#explore-btn {
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.875rem 2rem;
+  width: fit-content;
+  cursor: pointer;
+  text-align: center;
+}
+
+#explore-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pill {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+}
+
+/* Plans grid */
+.plans {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#plan-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#plan-card .poster {
+  height: 300px;
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+#plan-card .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+#plan-card p {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input {
+  background: #111111;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  color: var(--foreground);
+  position: relative;
+  z-index: 1;
+}
+
+input:focus {
+  outline: 1px solid var(--foreground);
+}
+
+button {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 6px;
+  padding: 0.625rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background: #dddddd;
 }

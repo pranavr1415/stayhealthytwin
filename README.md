@@ -1,6 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# This is StayHealthyTwin
 
-## Getting Started
+## What's this about?
+This project is about the Diet plans of any gym person. 
+It takes your bmi index value, recommends you a plan for your diet, and these plans are divided into `bulk, cut and balanced diet`.
+The plans have meals, which have `vegetarian, non-vegetarian` types of food for specific persons. 
+It also includes an `allergy` bar where you can mention your allergies so the food does not contain them. 
+The homepage contains recommended plans where people have ordered them and used them.
+These plans contain workout routines, meals for each day and each hour where it can show you if you have to skip a specific meal (as in lunch, breakfast etc).
+The Navigation bar contains:
+- about section
+- the body mass index calculator
+- create plan option *where you can create your own plan for people with the same body mass index as you.*
+
+> You can create your profile that enables users to save your favourite plans and monitor your progress.
+
+This has a search and filter option for food for vegan, non-vegan, allergy-friendly meals, restriction related meals etc. 
+There is a Progress bar to catch up where you are at and how long is your plan left and when you can hit your next milestone at, it also has daily reminders for your meals, workouts etc. It has a daily calorie, nutrient, carbs, etc intakes to maintain your body. 
+
+It has options to share your customized plans to everyone or keep it private for fitness tracking purposes. This has a goated design which works anywhere from a smart watch upto a personal computer. It has flawless analaysis, customizations for your plans this makes sure you can achieve your fitness goals efficiently and maintain a balanced lifestyle.
+
+This is like an fitness companion beside you which helps you in your daily life and takes good care of your goals. It is a simple and easy platform for perzonalized planning and fitness managment.
+And as always stay healthy twin!
+
+
+## To run locally
 
 First, run the development server:
 
@@ -15,22 +38,3 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
