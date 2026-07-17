@@ -6,6 +6,7 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy import select
 from app.models.models import User
 from app.utils.jwt import extractUserId
+import json
 
 router = APIRouter(prefix="/user", tags=["user"])
 
@@ -35,7 +36,7 @@ async def updateUserProfile(bmi: str, db: AsyncSession = Depends(get_db), token:
     )
     fetched_user = result.scalar_one_or_none()
     
-    
+
     if fetched_user is not None:
         fetched_user.bmi = float(bmi)
         await db.commit()
@@ -47,7 +48,14 @@ async def updateUserProfile(bmi: str, db: AsyncSession = Depends(get_db), token:
     return msg
 
 @router.post("/plan")
-async def createPlan(db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
+async def createPlan(data: str, db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
     user = await fetchUser(db=db, token=token)
+    plan_data = json.loads(data)
+
     return_data = {}
     return return_data
+
+@router.get("/plan")
+async def getPlan(limit: int, db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
+    plan_data = {}
+    return 

@@ -11,6 +11,7 @@ The Navigation bar contains:
 - about section
 - the body mass index calculator
 - create plan option *where you can create your own plan for people with the same body mass index as you.*
+- When you click on the create plan buton the menu has some options which you have to fill up, the options are your weight, height, type(as in veg/non-veg), any restricions/     allergy-related meals, if its either of the plans(bulk/cut/balanced-diet), what type of meal it is(breakfast/lunch/dinner) and if it should be private/public.
 
 > You can create your profile that enables users to save your favourite plans and monitor your progress.
 
