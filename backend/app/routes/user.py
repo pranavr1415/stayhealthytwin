@@ -18,14 +18,14 @@ async def fetchUserProfile(db: AsyncSession = Depends(get_db), token: str = Depe
     return user
 
 @router.get("/update_profile")
-async def updateUserProfile(db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
+async def updateUserProfile(bmi: str, db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
     msg = {}
     user = await fetchUser(db = db, token = token)
+    print(user, bmi)    
     return msg
 
 @router.post("/plan")
 async def createPlan(db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
     user = await fetchUser(db=db, token=token)
     return_data = {}
-    
     return return_data

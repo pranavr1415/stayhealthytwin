@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import styles from './calculator.module.css'
+import axios from 'axios';
+import { useAuth } from '@/context/AuthContext';
 
 const Calculator = () => {
 
@@ -9,10 +11,29 @@ const Calculator = () => {
     const [height, setHeight] = useState(0);
     const [bmi, setBmi] = useState(0);
     const [updateBmi, setUpdateBmi] = useState(false);
+    const { token } = useAuth();
 
-    const updateUserBmi = () => {
+    const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+    const USER_UPDATE_URL = `${BACKEND_URL}/api/user/update_profile`;
+
+    const updateUserBmi = async () => {
+        response = await axios.get(USER_UPDATE_URL,
+            {
+                params: {
+                    "bmi": `${bmi}`
+                },
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+        );
+
+
+
+        console.log(response);
         
     }
+    
 
     const handleCalc = (e) => {
         e.preventDefault();
