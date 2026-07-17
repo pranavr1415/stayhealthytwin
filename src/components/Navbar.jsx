@@ -14,6 +14,7 @@ const Navbar = () => {
                 <ul>
                     <Link href ='/' >Home</Link>
                     <Link href ='/' >Plans</Link>
+                    <Link href ='/bmi/calculator' >Calculator</Link>
                     <Link href ='/' >CreatePlan</Link>
                 </ul>
 
