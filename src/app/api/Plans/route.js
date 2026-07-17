@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import connectDB from "../lib/mongodb";
 
 export async function POST(request) {
     try {
-        await connectDB(); 
-
+       
         const formData = await req.formData();
 
         let Plan;
