@@ -17,7 +17,7 @@ const Calculator = () => {
     const USER_UPDATE_URL = `${BACKEND_URL}/api/user/update_profile`;
 
     const updateUserBmi = async () => {
-        response = await axios.get(USER_UPDATE_URL,
+        const response = await axios.get(USER_UPDATE_URL,
             {
                 params: {
                     "bmi": `${bmi}`
