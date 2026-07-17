@@ -1,11 +1,14 @@
 import { Schibsted_Grotesk, Martian_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import { AuthProvider } from "@/context/AuthContext";
+
 
 const schibstedGrotesk = Schibsted_Grotesk({
   variable: "--font-schibsted-grotesk",
   subsets: ["latin"],
 });
+
 
 const martianMono = Martian_Mono({
   variable: "--font-martian-mono",
@@ -24,10 +27,12 @@ export default function RootLayout({ children }) {
       className={`${schibstedGrotesk.variable} ${martianMono.variable} min-h-screen antialiased`}
     >
       <body>
-        <Navbar />
-        <main>
-          {children}
-        </main>
+        <AuthProvider>
+          <Navbar />
+          <main>
+            {children}
+          </main>
+        </AuthProvider>
       </body>
     </html>
   );

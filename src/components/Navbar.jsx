@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useAuth } from "@/context/AuthContext";
 
 const Navbar = () => {
+
+
   return (
         <header>
             <nav>
@@ -15,10 +19,12 @@ const Navbar = () => {
                     <Link href ='/' >Home</Link>
                     <Link href ='/' >Plans</Link>
                     <Link href ='/bmi/calculator' >Calculator</Link>
-                    <Link href ='/' >CreatePlan</Link>
+                    <Link href ='/' >Create Plan</Link>
                 </ul>
 
-
+                <ul>
+                    <Link href={'/auth'}>Login</Link>
+                </ul>
             </nav>
         </header>
   )

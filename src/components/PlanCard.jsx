@@ -14,6 +14,7 @@ const Plancard = ({ title, image }) => {
       <p className="title">{title}</p>
 
 
+
       <div className="Calories">
         <div>
             <Image src="/icons/fire.svg" alt="Calories" width={14} height={14} />
