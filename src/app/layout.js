@@ -1,4 +1,4 @@
-import { Schibsted_Grotesk , Martian_Mono } from "next/font/google";
+import { Schibsted_Grotesk, Martian_Mono } from "next/font/google";
 import "./globals.css";
 
 const schibstedGrotesk = Schibsted_Grotesk({
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         {children}
-        </body>
+      </body>
     </html>
   );
 }
