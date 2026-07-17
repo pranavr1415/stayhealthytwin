@@ -17,7 +17,7 @@ const Navbar = () => {
 
                 <ul>
                     <Link href='/' >Home</Link>
-                    <Link href='/' >Plans</Link>
+                    <Link href='/' >My Plans</Link>
                     <Link href='/bmi/calculator' >Calculator</Link>
                     {user ? <>
                         <div>

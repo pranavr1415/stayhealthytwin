@@ -8,6 +8,11 @@ const Calculator = () => {
     const [weight, setWeight] = useState(0);
     const [height, setHeight] = useState(0);
     const [bmi, setBmi] = useState(0);
+    const [updateBmi, setUpdateBmi] = useState(false);
+
+    const updateUserBmi = () => {
+        
+    }
 
     const handleCalc = (e) => {
         e.preventDefault();
@@ -29,23 +34,37 @@ const Calculator = () => {
 
         // Round to 2 decimal places
         setBmi(bmiValue.toFixed(2));
+
+        setUpdateBmi(true);
     };
 
 
     return (
-        <div className={styles.calculator}>
-            <h1>BMI Calculator</h1>
-            <form onSubmit={handleCalc}>
-                <label htmlFor="weight">Weight (kg):</label>
-                <input type="number" id="weight" name="weight" value={weight} onChange={(e) => { setWeight(e.currentTarget.value) }} required />
-                <label htmlFor="height">Height (cm):</label>
-                <input type="number" id="height" name="height" value={height} onChange={(e) => { setHeight(e.currentTarget.value) }} required />
-                <button type="submit">Calculate BMI</button>
-            </form>
-            <br />
-            <div className={styles.result}>
-                <p>Your BMI is {bmi}</p>
+        <div>
+            <div className={styles.calculator}>
+                <h1>BMI Calculator</h1>
+                <form onSubmit={handleCalc}>
+                    <label htmlFor="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" value={weight} onChange={(e) => { setWeight(e.currentTarget.value) }} required />
+                    <label htmlFor="height">Height (cm):</label>
+                    <input type="number" id="height" name="height" value={height} onChange={(e) => { setHeight(e.currentTarget.value) }} required />
+                    <button type="submit">Calculate BMI</button>
+                </form>
+                <br />
+                <div className={styles.result}>
+                    <p>Your BMI is {bmi}</p>
+                </div>
             </div>
+            {updateBmi && (
+                <div className={styles.updateBmi}>
+                    <div>
+                        Would you like to update your BMI to {bmi} in this account?
+                        <br/><br/>
+                        <button onClick={updateUserBmi}>Yes! Update it for me.</button>
+                    </div>
+                    <button onClick={()=>setUpdateBmi(false)}>Not right now</button>
+                </div>
+            )}
         </div>
     )
 }

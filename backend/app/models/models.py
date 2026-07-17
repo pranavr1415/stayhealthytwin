@@ -7,7 +7,9 @@ from sqlalchemy import (
     TIMESTAMP,
     ForeignKey,
     func,
-    text
+    text,
+    Float,
+    JSON
 )
 from sqlalchemy.orm import relationship
 from ..db.database import Base
@@ -76,6 +78,8 @@ class User(Base):
     email = Column(Text, unique=True, nullable=False)
     name = Column(Text, nullable=False)
     profile_picture = Column(Text, server_default=text("''"))
+
+    bmi = Column(Float, server_default="0.00", nullable=False)
 
     sub = Column(Text, unique=True, nullable=False)
 
@@ -170,3 +174,13 @@ class Connection(Base):
     user = relationship("User", back_populates="connections")
     room = relationship("Room", back_populates="connections")
     client = relationship("Client", back_populates="connections")
+
+class Plans(Base):
+    __tablename__ = "plans"
+
+    id = Column(BigInteger, primary_key=True)
+
+    data = Column(JSON, nullable=True)
+    plan_of = Column(BigInteger, nullable=False)
+    private = Column(Boolean, server_default="false", nullable=False)
+    created_at = Column(TIMESTAMP, server_default=func.now())

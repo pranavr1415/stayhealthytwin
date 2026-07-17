@@ -16,3 +16,16 @@ async def get_user(request: Request):
 async def fetchUserProfile(db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
     user = await fetchUser(db=db, token=token)
     return user
+
+@router.get("/update_profile")
+async def updateUserProfile(db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
+    msg = {}
+    user = await fetchUser(db = db, token = token)
+    return msg
+
+@router.post("/plan")
+async def createPlan(db: AsyncSession = Depends(get_db), token: str = Depends(oauth2_scheme)):
+    user = await fetchUser(db=db, token=token)
+    return_data = {}
+    
+    return return_data
