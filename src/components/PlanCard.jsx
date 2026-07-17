@@ -6,7 +6,7 @@ const Plancard = ({ title, image }) => {
     <Link href="/Plan" id="plan-card">
       <Image src={image} alt={title} width={410} height={300} className="poster" />
 
-      <div className="flex flex-row gap-2">
+      <div>
         <Image src="/icons/chef.svg" alt="Type" width={14} height={14} /> 
         <p>Type</p>
       </div>
@@ -16,7 +16,7 @@ const Plancard = ({ title, image }) => {
 
       <div className="Calories">
         <div>
-            <Image src="/icons/fire.svg" alr ="Calories" width={14} height={14} />
+            <Image src="/icons/fire.svg" alt="Calories" width={14} height={14} />
             <p>Calories</p>
         </div>
       </div>
